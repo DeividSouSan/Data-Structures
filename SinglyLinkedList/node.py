@@ -4,4 +4,4 @@ class Node():
         self.next = next
 
     def __eq__(self, other):
-        return (self.value == other.value) and (self.next == other.next)
+        return (self.value == other.value) and (self.next == other.next) if other is not None else False

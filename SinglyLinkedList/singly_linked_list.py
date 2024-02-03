@@ -1,7 +1,7 @@
-from Stacks.Stack import Stack
-from SinglyLinkedLists.Node import Node
+from .node import Node
 
-class LinkedList:
+
+class SinglyLinkedList():
     def __init__(self):
         self.head = None
         self.tail = None
@@ -9,7 +9,7 @@ class LinkedList:
     def add(self, value):
         newNode = Node(value, None)
 
-        if self.head == None:
+        if self.head is None:
             self.head = newNode
             self.tail = newNode
         else:
@@ -17,7 +17,7 @@ class LinkedList:
             self.tail.next = newNode
             self.tail = newNode
 
-    def addTo(self, value, index):
+    def add_to(self, value, index):
         MAX_INDEX = self.size()
         if index < 0 or index > MAX_INDEX:
             raise IndexError("list index out of range")
@@ -35,13 +35,13 @@ class LinkedList:
     def contains(self, value):
         currentNode = self.head
 
-        while (currentNode != None) and (currentNode.value != value):
+        while (currentNode is not None) and (currentNode.value != value):
             currentNode = currentNode.next
 
         return True if currentNode else False
 
     def delete(self, value):
-        if self.head == None:  # Caso 1: a lista está vazia
+        if self.head is None:  # Caso 1: a lista está vazia
             return False
 
         elif self.head.value == value:  # Pré-condição: O valor está no primeiro nó
@@ -54,16 +54,17 @@ class LinkedList:
             else:
                 # Caso 3: O primeiro nó guarda o valor procurado, mas existem mais nós na lista
                 self.head = self.head.next
-
+                return True
+            
         else:  # Pré-condição: O valor procurado não está no primeiro nó e a lista não está vazia
             currentNode = self.head
 
             # Enquanto o proximo valor for não-nulo e enquanto o proximovalor não for o que eu procuro, roda o loop
-            while (currentNode.next != None) and (currentNode.next.value != value):
+            while (currentNode.next is not None) and (currentNode.next.value != value):
                 currentNode = currentNode.next
 
             # Pré-condição: o valor do nó atual não é nulo, ou seja, currentNode não é último nó.
-            if currentNode.next != None:
+            if currentNode.next is not None:
                 if currentNode.next == self.tail:  # Pré-condição: O próximo nó é o último
                     # Caso 4: O valor se encontra no último nó
                     self.tail = currentNode
@@ -71,7 +72,6 @@ class LinkedList:
                     return True
                 else:  # O proximo nó não é o último
                     # Caso 5: O valor se encontra no meio da lista
-                    print("Oi")
                     currentNode.next = currentNode.next.next
                     return True
 
@@ -80,12 +80,12 @@ class LinkedList:
     def transverse(self):
         currentNode = self.head
 
-        while (currentNode != None):
+        while (currentNode is not None):
             yield currentNode.value
             currentNode = currentNode.next
 
-    def transverseReverse(self):
-        if self.tail != None:
+    def transverse_reverse(self):
+        if self.tail is not None:
             currentNode = self.tail
 
             while currentNode != self.head:
@@ -100,7 +100,7 @@ class LinkedList:
 
             yield currentNode.value
 
-    def transverseReverseStack(self):
+    def transverse_reverse_stack(self):
         stack = Stack()
 
         for item in self.transverse():
@@ -109,12 +109,6 @@ class LinkedList:
         while not stack.isEmpty():
             yield stack.pop()
 
-    def size(self):
-        size = 0
-        for item in self.transverse():
-            size += 1
-
-        return size
 
     def size(self):
         size = 0
@@ -123,6 +117,13 @@ class LinkedList:
 
         return size
 
+    def values(self):
+        values = []
+        for item in self.transverse():
+            values.append(item)
+
+        return values
+            
     def display(self):
         for item in self.transverse():
             print(item, end=" ")
