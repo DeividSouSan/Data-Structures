@@ -1,5 +1,4 @@
-
-from SinglyLinkedList.singly_linked_list import SinglyLinkedList
+from singly_linked_list import SinglyLinkedList
 
 class TestAddMethod(object):
     """

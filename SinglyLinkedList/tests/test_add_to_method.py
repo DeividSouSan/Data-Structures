@@ -1,8 +1,8 @@
-import SinglyLinkedList
+from singly_linked_list import SinglyLinkedList
 
 class TestAddToMethod:
     """
-    Essa classe testa os seguintes casos do método add_to da classe SinglyLinkedLists
+    Essa classe testa os seguintes casos do método add_to da classe SinglyLinkedList
 
     1. Adicionar um elemento na posição 0 de uma lista vazia.
     2. Adicionar um elemento na posição 0 de uma lista com vários elementos.
@@ -14,8 +14,8 @@ class TestAddToMethod:
     """
 
     def test_add_to_first_pos_of_empty_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
         linked_list.add_to(1, 0)
 
-        assert linked_list.size == 1
-        assert linked_list.values == [1]
+        assert linked_list.size() == 1
+        assert linked_list.values() == [1]

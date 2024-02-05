@@ -1,4 +1,4 @@
-from singly_linked_list import SinglyLinkedLists
+from singly_linked_list import SinglyLinkedList
 
 class TestDeleteMethod(object):
     """
@@ -15,12 +15,12 @@ class TestDeleteMethod(object):
     """
 
     def test_delete_from_empty_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         assert linked_list.delete(1) == False, "A lista está vazia, mas o método delete retornou True"
 
     def test_delete_the_only_node_in_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
 
@@ -29,7 +29,7 @@ class TestDeleteMethod(object):
         assert linked_list.values() == [], "A lista não está vazia"
 
     def test_delete_node_from_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
         linked_list.add(2)
@@ -40,7 +40,7 @@ class TestDeleteMethod(object):
         assert linked_list.values() == [1, 3], "A lista não contém os elementos [1, 3]"
 
     def test_delete_first_node_from_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
         linked_list.add(2)
@@ -51,7 +51,7 @@ class TestDeleteMethod(object):
         assert linked_list.values() == [2, 3], "A lista não contém os elementos [2, 3]"
 
     def test_delete_last_node_from_list(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
         linked_list.add(2)
@@ -62,7 +62,7 @@ class TestDeleteMethod(object):
         assert linked_list.values() == [1, 2], "A lista não contém os elementos [1, 2]"
 
     def test_delete_node_that_doesnt_exist(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
         linked_list.add(2)
@@ -73,7 +73,7 @@ class TestDeleteMethod(object):
         assert linked_list.values() == [1, 2, 3], "A lista não contém os elementos [1, 2, 3]"
 
     def test_delete_node_that_appear_twice(self):
-        linked_list = SinglyLinkedLists()
+        linked_list = SinglyLinkedList()
 
         linked_list.add(1)
         linked_list.add(2)
