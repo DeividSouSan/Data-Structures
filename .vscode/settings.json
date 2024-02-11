@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.gitignore": true,
+        "**/__pycache__": true,
+        "**/__init__.py": false,
+        "**/.pylintrc": true,
+    }
+}
