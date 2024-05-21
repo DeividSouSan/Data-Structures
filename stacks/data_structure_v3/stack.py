@@ -1,6 +1,6 @@
 
 
-from ...LinkedLists.DoublyLinkedLists.data_structure_v2.linked_list import DoublyLinkedLists
+from ...linked_lists.doubly_linked_list.data_structure_v2.linked_list import DoublyLinkedLists
 
 
 class Stack[T]:

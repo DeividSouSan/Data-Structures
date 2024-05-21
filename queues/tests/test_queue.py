@@ -1,5 +1,5 @@
 import unittest
-from Queues.data_structure.queue import Queue
+from queues.data_structure.queue import Queue
 
 class TestQueue(unittest.TestCase):
     def test_enqueue_on_empty_queue(self):

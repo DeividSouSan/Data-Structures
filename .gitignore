@@ -2,3 +2,5 @@ __init__.py
 test_linkedlist.py
 main.py
 __pycache__/
+**/.vscode
+**/.venv

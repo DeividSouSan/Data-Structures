@@ -1,7 +1,7 @@
 
 import unittest
 
-from LinkedLists.SinglyLinkedList.data_structure.singly_linked_list import SinglyLinkedList
+from linked_lists.singly_linked_list.data_structure.singly_linked_list import SinglyLinkedList
 
 
 

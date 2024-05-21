@@ -1,5 +1,5 @@
 from typing import TypeVar
-from Stacks.data_structure_v1.stack import Stack
+from stacks.data_structure_v1.stack import Stack
 from .node import Node
 
 T = TypeVar('T')
