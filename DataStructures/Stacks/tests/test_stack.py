@@ -1,6 +1,6 @@
 
 import unittest
-from Stacks.data_structure.stack import EmptyStack, Stack
+from Stacks.data_structure_v1.stack import EmptyStack, Stack
 
 
 class TestStackMethods(unittest.TestCase):

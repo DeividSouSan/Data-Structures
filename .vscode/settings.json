@@ -1,9 +1,13 @@
 {
     "files.exclude": {
         "**/.git": true,
-        "**/.gitignore": true,
+        "**/.gitignore": false,
         "**/__pycache__": true,
         "**/__init__.py": false,
         "**/.pylintrc": true,
-    }
+        
+    },
+    "conventionalCommits.scopes": [
+        "ds"
+    ]
 }

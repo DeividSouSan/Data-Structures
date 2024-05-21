@@ -4,7 +4,7 @@ from typing import Optional, TypeVar
 T = TypeVar('T')
 
 
-class Stack:
+class Stack[T]:
     def __init__(self):
         self.items: list[T] = []
         self.top: Optional[T] = None
